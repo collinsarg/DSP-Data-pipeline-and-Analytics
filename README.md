@@ -579,19 +579,6 @@ To add a new data source:
 - [ ] Data lineage and audit trail
 - [ ] Integration with Slack/Teams notifications
 
----
 
-## License
-
-[Add your license here - MIT, Apache 2.0, etc.]
-
----
-
-## Contact & Support
-
-For questions or issues, please open an issue on GitHub or contact the repository maintainer.
-
----
-
-**Last Updated:** June 2025  
+**Last Updated:** January 2026 
 **Version:** 1.0.0
