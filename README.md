@@ -1,6 +1,6 @@
 # DSP Data Pipeline & Analytics
 
-A comprehensive data pipeline solution for collecting, ingesting, and analyzing delivery service partner (DSP) driver and fleet data. This system aggregates real-time operational metrics from multiple sources into a centralized Azure SQL Server database, enabling advanced analytics and business intelligence through Power BI.
+A comprehensive data pipeline solution for collecting, ingesting, and analyzing delivery service partner (DSP) driver and fleet data. This system aggregates real-time operational metrics from multiple data sources into a unified analytics platform.
 
 ## 📋 Table of Contents
 
@@ -11,6 +11,7 @@ A comprehensive data pipeline solution for collecting, ingesting, and analyzing 
 - [Database Schema](#database-schema)
 - [Setup & Installation](#setup--installation)
 - [Usage](#usage)
+- [Power BI Dashboard Examples](#power-bi-dashboard-examples)
 - [Key Features](#key-features)
 
 ---
@@ -66,7 +67,7 @@ Power BI Dashboards
 - **Data Processing:** Pandas, NumPy
 - **Authentication:** Azure Identity, SQL authentication
 - **Environment Management:** python-dotenv
-- **Analytics:** Power BI
+- **Analytics & Visualization:** Power BI
 - **Infrastructure:** Azure Cloud
 
 ---
@@ -421,6 +422,132 @@ This ensures reliability even with connection timeouts or large datasets.
 
 ---
 
+## Power BI Dashboard Examples
+
+The analytics platform delivers actionable insights through interactive Power BI dashboards. Below are representative examples showcasing key performance areas and metrics.
+
+### 📊 Dashboard Galleries
+
+#### **Fleet Status Dashboard**
+Real-time operational overview of the entire fleet with vehicle-level metrics and performance indicators.
+
+![Fleet Status Dashboard](PowerBI-examples/FleetStatus.jpg)
+
+**Key Metrics:**
+- Active vs. inactive vehicle counts
+- Vehicle utilization rates
+- Service type distribution
+- Operational status breakdown
+- Real-time dispatch tracking
+
+**Use Cases:**
+- Monitor fleet availability for demand planning
+- Identify maintenance scheduling opportunities
+- Track vehicle deployment efficiency
+
+---
+
+#### **Total Packages Dashboard**
+Comprehensive package delivery volume analytics with temporal trends and operational insights.
+
+![Total Packages Dashboard](PowerBI-examples/TotalPkgs.jpg)
+
+**Key Metrics:**
+- Daily and weekly package delivery volumes
+- Trend analysis and forecasting
+- Volume distribution by station and service type
+- Peak delivery period identification
+- Historical performance comparisons
+
+**Use Cases:**
+- Capacity planning and staffing decisions
+- Identify seasonal patterns and anomalies
+- Benchmark performance across stations
+
+---
+
+#### **Not Delivered Packages Dashboard**
+Detailed analysis of failed deliveries with root cause categorization and improvement tracking.
+
+![Not Delivered Packages Dashboard](PowerBI-examples/NotDeliveredPkgs.jpg)
+
+**Key Metrics:**
+- DNR (Did Not Reach) package counts
+- Failure reason distribution
+- Repeat failure patterns by driver/route
+- Impact on customer satisfaction
+- Resolution tracking
+
+**Use Cases:**
+- Identify operational bottlenecks
+- Target coaching and training initiatives
+- Monitor service quality improvements
+
+---
+
+#### **Specific Week Packages Dashboard**
+Weekly performance snapshot with granular visibility into daily delivery metrics and trends.
+
+![Specific Week Packages Dashboard](PowerBI-examples/SpecificWeekPkgs.jpg)
+
+**Key Metrics:**
+- Daily delivery counts for selected week
+- Day-over-day performance changes
+- Weekly targets vs. actuals
+- Driver and route performance rankings
+- Exception identification and alerts
+
+**Use Cases:**
+- Weekly performance reviews and coaching
+- Quickly spot underperforming days/routes
+- Adjust staffing for upcoming week
+
+---
+
+#### **Tenured Employees Dashboard**
+Workforce analytics focused on tenure, retention, and employee lifecycle tracking.
+
+![Tenured Employees Dashboard](PowerBI-examples/TenuredEmployees.jpg)
+
+**Key Metrics:**
+- Employee tenure distribution
+- Retention rates by tenure bracket
+- Hiring and attrition trends
+- Performance correlation with tenure
+- Succession planning insights
+
+**Use Cases:**
+- Identify high-value long-term employees
+- Monitor workforce stability
+- Plan retention initiatives
+- Support succession planning
+
+---
+
+### 📈 Dashboard Features
+
+**Interactive Filtering:**
+- Drill-down by station, DSP, driver, or date range
+- Cross-filter linked visualizations
+- Dynamic date period selection
+
+**Real-Time Data:**
+- Automated refresh every 30 minutes
+- Direct connection to Azure SQL database
+- Minimal latency for operational dashboards
+
+**Mobile-Responsive Design:**
+- Optimized for desktop and tablet viewing
+- Touch-friendly navigation and filters
+- Responsive layouts for different screen sizes
+
+**Accessibility & Sharing:**
+- Role-based access via Azure AD
+- Email distribution for scheduled reports
+- Export capabilities (Excel, PDF)
+
+---
+
 ## Key Features
 
 ### 🔄 Robust Data Normalization
@@ -447,10 +574,11 @@ This ensures reliability even with connection timeouts or large datasets.
 - No hardcoded secrets
 - Encrypted database connections (TLS)
 
-### 📊 Rich Analytics
+### 📊 Rich Analytics & Visualization
 - Pre-built aggregation views
 - Weekly scorecard calculations
 - Station-level metrics rollups
+- Interactive Power BI dashboards with drill-down capability
 - Customizable metric definitions
 
 ### 🏗️ Modular Architecture
@@ -492,6 +620,13 @@ DSP-Data-pipeline-and-Analytics/
 │       ├── weeklyProjectedScore.sql
 │       ├── TenureReporting/        # Tenure tracking schemas
 │       └── [19 additional SQL files for analytics views]
+│
+├── PowerBI-examples/                # Dashboard showcase images
+│   ├── FleetStatus.jpg
+│   ├── TotalPkgs.jpg
+│   ├── NotDeliveredPkgs.jpg
+│   ├── SpecificWeekPkgs.jpg
+│   └── TenuredEmployees.jpg
 │
 └── README.md                        # This file
 ```
@@ -579,6 +714,7 @@ To add a new data source:
 - [ ] Data lineage and audit trail
 - [ ] Integration with Slack/Teams notifications
 
+---
 
-**Last Updated:** January 2026 
-**Version:** 1.0.0
+**Last Updated:** June 2026  
+**Version:** 1.1.0
